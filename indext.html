@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Zahidul Islam Ratul - Professional Penetration Tester Portfolio" />
+<title>Zahidul Islam Ratul | Cybersecurity Portfolio</title>
+
+<!-- FontAwesome for icons -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Devicon for tech logos -->
+<link href="https://cdn.jsdelivr.net/npm/devicon@2.14.0/devicon.min.css" rel="stylesheet" />
+
+<style>
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #121212;
+    color: #eee;
+    line-height: 1.6;
+  }
+  a {
+    color: #3f87f5;
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+
+  /* Header & Nav */
+  header {
+    position: sticky;
+    top: 0;
+    background: #1f1f1f;
+    padding: 1rem 2rem;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  nav a {
+    color: #aaa;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  nav a:hover,
+  nav a.active {
+    background-color: #3f87f5;
+    color: white;
+  }
+
+  /* Main container */
+  main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem 4rem;
+  }
+
+  /* Section styles */
+  section {
+    margin-bottom: 4rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 3rem;
+  }
+  section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  h1, h2 {
+    color: #3f87f5;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+
+  /* About */
+  #about p {
+    max-width: 700px;
+    font-size: 1.15rem;
+  }
+
+  /* Skills grid */
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .skill {
+    background: #222;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #3f87f5aa;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex: 1 1 300px;
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+  .skill:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 14px #3f87f5ff;
+  }
+  .skill i {
+    font-size: 2rem;
+    color: #3f87f5;
+    width: 36px;
+    text-align: center;
+  }
+
+  /* Projects cards */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: #222;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #3f87f5aa;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px #3f87f5ff;
+  }
+  .project-image {
+    background: #444;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #666;
+    user-select: none;
+  }
+  .project-content {
+    padding: 1rem 1.5rem;
+    flex-grow: 1;
+  }
+  .project-content h3 {
+    margin-top: 0;
+    color: #3f87f5;
+  }
+  .project-content p {
+    font-size: 0.95rem;
+    color: #ccc;
+  }
+  .project-links {
+    margin-top: auto;
+    padding: 0 1.5rem 1rem;
+  }
+  .project-links a {
+    margin-right: 1rem;
+    color: #3f87f5;
+    font-size: 1.25rem;
+  }
+  .project-links a:hover {
+    color: #75a7ff;
+  }
+
+  /* Certificates & achievements lists */
+  .certificates-list,
+  .achievements-list {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .cert-item,
+  .achieve-item {
+    background: #222;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px #3f87f5aa;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .cert-item i,
+  .achieve-item i {
+    font-size: 2rem;
+    color: #3f87f5;
+    flex-shrink: 0;
+  }
+  .cert-item div,
+  .achieve-item div {
+    flex-grow: 1;
+  }
+  .cert-title,
+  .achieve-title {
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.2rem;
+  }
+  .cert-desc,
+  .achieve-desc {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+
+  /* Contact list */
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+  .contact-list li {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    gap: 0.75rem;
+  }
+  .contact-list li i {
+    color: #3f87f5;
+    font-size: 1.5rem;
+    min-width: 28px;
+    text-align: center;
+  }
+  .contact-list a {
+    word-break: break-all;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+    background: #1f1f1f;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    .skills-list {
+      flex-direction: column;
+    }
+    .skill {
+      flex: 1 1 100%;
+    }
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#about" class="active">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- About -->
+  <section id="about">
+    <h1>Zahidul Islam Ratul</h1>
+    <h2>👨‍💻 Professional Penetration Tester</h2>
+    <p>
+      A professional penetration tester with hands-on expertise in Active Directory exploitation,
+      Linux environments, phishing simulations, and web application testing.
+      Passionate about offensive security and integrating AI into modern red teaming workflows.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>🛠 Skills</h2>
+    <div class="skills-list">
+      <div class="skill"><i class="devicon-windows8-plain colored"></i> Active Directory Attacks</div>
+      <div class="skill"><i class="devicon-linux-plain colored"></i> Linux Hardening & Exploitation</div>
+      <div class="skill"><i class="fas fa-bug"></i> Burp Suite & Web Pentesting</div>
+      <div class="skill"><i class="fas fa-search"></i> Nmap & Reconnaissance</div>
+      <div class="skill"><i class="fas fa-envelope-open-text"></i> Gophish & Phishing Campaigns</div>
+      <div class="skill"><i class="fas fa-robot"></i> AI-Powered Security Tools</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>📁 Projects</h2>
+    <div class="projects-grid">
+      <!-- Example project card, update later with your real projects -->
+      <article class="project-card">
+        <div class="project-image" aria-label="Project Placeholder Image">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <div class="project-content">
+          <h3>Project Title 1</h3>
+          <p>Short description of this project showcasing penetration testing or cybersecurity skills. Replace this with your own content.</p>
+        </div>
+        <div class="project-links">
+          <a href="#" title="GitHub Repository" aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+          <a href="#" title="Live Demo" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-image" aria-label="Project Placeholder Image">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="project-content">
+          <h3>Project Title 2</h3>
+          <p>Another placeholder project description. Add your cybersecurity related project details here.</p>
+        </div>
+        <div class="project-links">
+          <a href="#" title="GitHub Repository" aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+          <a href="#" title="Live Demo" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section id="certificates">
+    <h2>🎓 Certificates</h2>
+    <div class="certificates-list" aria-label="Certificates List">
+      <div class="cert-item">
+        <i class="fas fa-certificate"></i>
+        <div>
+          <div class="cert-title">Certificate Title 1</div>
+          <div class="cert-desc">Details about the certificate. You can add issuing authority and date here.</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <i class="fas fa-certificate"></i>
+        <div>
+          <div class="cert-title">Certificate Title 2</div>
+          <div class="cert-desc">Details about the certificate. You can add issuing authority and date here.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements">
+    <h2>🏆 Achievements</h2>
+    <div class="achievements-list" aria-label="Achievements List">
+      <div class="achieve-item">
+        <i class="fas fa-trophy"></i>
+        <div>
+          <div class="achieve-title">Achievement Title 1</div>
+          <div class="achieve-desc">Description of the achievement or award.</div>
+        </div>
+      </div>
+      <div class="achieve-item">
+        <i class="fas fa-trophy"></i>
+        <div>
+          <div class="achieve-title">Achievement Title 2</div>
+          <div class="achieve-desc">Description of the achievement or award.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>📞 Contact</h2>
+    <ul class="contact-list" aria-label="Contact Information">
+      <li><i class="fab fa-github"></i><a href="https://github.com/doggydonxd" target="_blank" rel="noopener noreferrer">doggydonxd</a></li>
+      <li><i class="fas fa-envelope"></i><a href="mailto:stuffdoall@gmail.com">stuffdoall@gmail.com</a></li>
+      <li><i class="fab fa-medium"></i><a href="https://medium.com/@halalbusinesse123" target="_blank" rel="noopener noreferrer">Medium</a></li>
+      <li><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/zahidul-islam-ratul/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2025 Zahidul Islam Ratul. All rights reserved.
+</footer>
+
+<script>
+  // Smooth scroll & active nav link highlight
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+
+  function setActiveLink() {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if (window.pageYOffset >= sectionTop) current = section.id;
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').slice(1);
+      document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  window.addEventListener('scroll', setActiveLink);
+  window.addEventListener('load', setActiveLink);
+</script>
+
+</body>
+</html>
